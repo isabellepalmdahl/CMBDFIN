@@ -1,0 +1,18 @@
+﻿@model SearchViewModel
+<!--SEARCH INDEX-->                          
+<!-- Search -->
+<div class="containersearch">
+    <section id="search">
+        <div id="searchfunction">
+            <input type="text" placeholder="Enter a movie title or keyword" id="searchterm" onfocus="this.value=''"/>
+            <button id="searchbutton" class="button big">Find</button>
+        </div>
+     </section>
+     @*this is where search.js displays the search results*@
+        <div id="searchresults">
+            <h1 class="searchheader">Search Results</h1>
+            <div id="searchcontainer">
+
+            </div>
+        </div>
+</div>

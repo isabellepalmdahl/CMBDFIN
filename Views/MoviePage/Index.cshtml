@@ -1,0 +1,57 @@
+﻿@model MoviePageViewModel
+<!--MOVIEPAGE INDEX-->
+<div class="moviepage">
+    <div class="title">
+        <h1 id="movietitle">@Model.Completeselectedmovie.Title</h1>
+        <p class="subheader">@Model.Completeselectedmovie.Year</p>
+    </div>
+    <section id="movie">  
+        <article class="overview">
+            <div class="movieinfo"">
+                <div class="plot">
+                    <h3>Plot</h3>
+                    <p>@Model.Completeselectedmovie.Plot</p>
+                </div>
+                <article class="moreinfo">
+                    <div class="director">
+                        <h3>Director:</h3>
+                        <p>@Model.Completeselectedmovie.Director</p>
+                    </div>
+                    <div class="released">
+                        <h3>Released:</h3>
+                        <p>@Model.Completeselectedmovie.Released</p>
+                    </div>
+                    <div class="runtime">
+                        <h3>Runtime:</h3>
+                        <p>@Model.Completeselectedmovie.Runtime</p>
+                    </div>
+                    <div class="actors">
+                        <h3>Actors:</h3>
+                        <p>@Model.Completeselectedmovie.Actors</p>
+                    </div>
+                </article>
+                <article class="ratingandvoting">
+                    <div class="rating">
+                        <h3>Current Ratings</h3>
+                        <p class="subheader">Current Cmdb Rating</p>
+                        <img id="cmdblikes" class="thumbsimage" src="/imagesfolder/thumbsup.png" alt="Thumbs up" />    
+                        <p id="nrOfLikes">@Model.Completeselectedmovie.numberOfLikes</p>
+                        <img id="cmdbdislikes" class="thumbsimage" src="/imagesfolder/thumbsdown.png" alt="Thumbs down" />
+                        <p id="nrOfDislikes">@Model.Completeselectedmovie.numberOfDislikes</p>   
+                    </div>
+                    <div id="voting">
+                        <h3>Vote</h3>
+                        <p class="subheader">Click here to add your vote.</p>
+                    </div>
+                    <div>
+                        <button id="votelike" class="likebutton" value=@Model.Completeselectedmovie.imdbId>like</button>
+                        <button id="votedislike" class="dislikebutton" value=@Model.Completeselectedmovie.imdbId>dislike</button>
+                    </div>
+                </article>
+              </div>
+        </article>
+        <div>
+            <img id="moviepageimage" src="@Model.Completeselectedmovie.Poster" alt="Image of @Model.Completeselectedmovie.Title" />
+        </div>
+    </section>
+</div>

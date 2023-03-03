@@ -1,0 +1,694 @@
+﻿/* #########################################
+
+MAIN CSS
+
+#########################################*/
+
+* {
+    margin: 0px;
+}
+
+header {
+    overflow: hidden;
+    position: sticky;
+    width: auto;
+    color: white;
+    display: flex;
+    top: 0px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+#logoheader {
+    height: auto;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8f6B29;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+#search {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#section {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#query {
+    border-radius: 7px;
+    height: 30px;
+}
+
+
+body {
+    font-family: Garamond, serif;
+    color: white;
+    background: #3a3e3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+}
+
+.mini-posts {
+    padding: 15px 5px;
+    text-align: center;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px 5px #8f6B29, 
+    0 0 5px 5px #FDE08D,
+    0 0 5px 5px #DF9F28;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.19);
+}
+
+.container .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #be9e44;
+    border-right: 20px solid #be9e44;
+}
+
+.container .card.active::before {
+    border: 20px solid #555;
+    border-top: 20px solid #333;
+    border-right: 20px solid #333;
+}
+
+.container .card .icon {
+    margin-bottom: 10px;
+}
+
+.container .card .content {
+    position: relative;
+    height: 215px;
+    overflow: hidden;
+}
+
+.container .card.active .content {
+    height: auto;
+}
+
+.container .card .content::before {
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #3f3f3f);
+}
+
+.container .card.active .content::before {
+    display: none;
+}
+
+.container .card .content h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #D3D3D3;
+}
+
+.container .card .content p {
+    font-weight: 300;
+    color: #D3D3D3;
+}
+
+.container .card .more {
+    position: relative;
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border: #8f6B29 2px solid;
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.container .card .view {
+    position: relative;
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border: #8f6B29 2px solid;
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.container .card .view::before {
+    content: 'View details';
+}
+
+.viewbtn {
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border: #8f6B29 2px solid;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.viewbtn a {
+    text-decoration: none; /*not working */
+}
+
+.container .card.active .more {
+    padding: 10px 15px;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,.8),0px 1px 3px rgba(0,0,0,0.3);
+    border-color: #111;
+    color: #555;
+    text-shadow: -1px -1px 1px rgba(0,0,0,1);
+    background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#333));
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container .card .more::before {
+    content: 'Read more';
+}
+
+.container .card.active .more::before {
+    content: 'Read less';
+}
+
+.button {
+    border-radius: 7px;
+    height: 30px;
+    text-align: center;
+    border-style: outset;
+    padding: 5px;
+    letter-spacing: .06em;
+    color: #664d1e;
+    font-weight: bold;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border: #8f6B29 2px solid;
+}
+
+.button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #965a4a;
+}
+
+#sidebar {
+    margin-top: 200px;
+    width: 350px;
+    position: fixed;
+    background: black;
+    left: 0px;
+    transition: all 500ms linear;
+    align-self: flex-start;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+.menu {
+    margin-left: 20px;
+    max-height: calc(100vh - 17rem); /*Put this with other calculation for responsive*/
+    overflow-y: scroll;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.menu li a {
+    text-transform: uppercase;
+    color: #be9e44;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    -ms-scrollbar-base-color: palegreen;
+    scrollbar-base-color: palegreen;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 20px;
+}
+
+#sidebar ul li {
+    color: rgba(230, 230, 230, 0.9);
+    list-style: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 100px;
+}
+
+.toggle-btn {
+    font-size: 170%;
+    color: #D3D3D3;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    height: 5px;
+    background: #151719;
+    margin: 10px, 0px;
+}
+
+#sidebar ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-posts ul {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sidebarimg {
+    height: auto;
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mini-post-header {
+    font-size: 18px;
+    padding: 10px;
+    color: #be9e44;
+}
+
+footer {
+    position: sticky;
+
+    width: auto;
+    flex-shrink: 0;
+}
+
+#footerimage {
+    width: 100%;
+    height: auto;
+}
+
+/* #########################################
+
+HOME PAGE CSS
+
+#########################################*/
+
+.homeheader {
+    text-align: center;
+}
+
+#topmoviesheader {
+    font-size: 80px;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+
+#topmoviesheader::after {
+    text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.subheader {
+    font-style: italic;
+    color: #be9e44; 
+    font-size: 24px;
+}
+
+#headerothermovies {
+    text-align: center;
+    font-size: 60px;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+
+/* #########################################
+
+MOVIE PAGE CSS
+
+#########################################*/
+
+#movietitle {
+    font-size: 48px;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+#movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.overview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.movieinfo {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    box-shadow: 0 0 5px 5px #8f6B29, 0 0 5px 5px #FDE08D, 0 0 5px 5px #DF9F28;
+}
+
+.overview .movieinfo {
+    position: relative;
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.19);
+}
+
+.overview .movieinfo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #be9e44;
+    border-right: 20px solid #be9e44;
+}
+
+.overview .movieinfo.active::before {
+    border: 20px solid #555;
+    border-top: 20px solid #333;
+    border-right: 20px solid #333;
+}
+
+.plot h3 {
+    color: #D3D3D3;
+}
+
+.plot p {
+    color: #D3D3D3;
+}
+
+.moreinfo h3 {
+    color: #D3D3D3;
+}
+
+.moreinfo p {
+    color: #D3D3D3;
+}
+
+#nrOfLikes {
+    color: #D3D3D3;
+}
+
+#nrOfDislikes {
+    color: #D3D3D3;
+}
+
+.rating h3 {
+    color: #D3D3D3;
+}
+
+.moviepage div {
+    padding: 10px;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutmovie {
+    display: flex;
+    flex-direction: column;
+}
+
+#voting {
+    display: flex;
+    flex-direction: column;
+}
+
+#moviepageimage {
+    height: 400px;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.thumbsimage {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.likebutton {
+    position: relative;
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #233329, #63d471, #233329);
+    background: linear-gradient(top, #233329, #63d471, #233329);
+    border: #8f6B29 2px solid;
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.dislikebutton {
+    position: relative;
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #a00000, #ff9999, #a00000);
+    background: linear-gradient(top, #a00000, #ff9999, #a00000);
+    border: #8f6B29 2px solid;
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.likebutton:disabled {
+    opacity: 0.3;
+
+}
+
+.dislikebutton:disabled {
+    opacity: 0.3;
+}
+
+#currentrating {
+    height: 150px;
+    width: 150px;
+}
+
+/* #########################################
+
+SEARCH PAGE CSS
+
+#########################################*/
+
+.more-details {
+    margin: 20px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchheader {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #D3D3D3;
+}
+
+#search {
+    align-items: center;
+}
+
+.movieresults {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.movieresults:hover {
+    box-shadow: 0 0 5px 5px #8f6B29, 0 0 5px 5px #FDE08D, 0 0 5px 5px #DF9F28;
+}
+
+.container .movieresults {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.19);
+}
+
+.container .movieresults::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #be9e44;
+    border-right: 20px solid #be9e44;
+}
+
+.container .movieresults.active::before {
+    border: 20px solid #555;
+    border-top: 20px solid #333;
+    border-right: 20px solid #333;
+}
+
+.container .movieresults .icon {
+    margin-bottom: 10px;
+}
+
+.container .movieresults .content {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.container .movieresults.active .content {
+    height: 50px;
+}
+
+.container .movieresults .content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.container .movieresults.active .content::before {
+    display: none;
+}
+
+.container .movieresults .content h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.container .movieresults .content p {
+    font-weight: 300;
+    color: #ccc;
+}
+
+.container .movieresults .view {
+    position: relative;
+    padding: 10px 15px;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border: #8f6B29 2px solid;
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #664d1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.container .movieresults .view::before {
+    content: 'View';
+}
+

@@ -1,0 +1,50 @@
+﻿@model HomeViewModel
+<!--HOMEPAGE INDEX-->
+<section>
+    <div class="homeheader">
+        <h1 id="topmoviesheader">Top movies</h1>
+        <p class="subheader">as voted by our community</p>
+    </div>   
+
+    <div class="container">
+        @foreach (var movie in @Model.CompleteMovies)
+        {
+                 <div class="card">
+                <div class="icon">
+                    <a asp-action="Index" asp-controller="MoviePage" asp-route-id="@movie.imdbId"><img src="@movie.Poster" alt="Picture of @movie.Title" /></a>
+                </div>
+                <div class="content">
+                    <h3>@movie.Title</h3>
+                    <p>@movie.Plot</p>
+                </div>
+                <a class="more"></a>
+                <a class="view" asp-action="Index" asp-controller="MoviePage" asp-route-id="@movie.imdbId"></a>
+            </div>
+        
+        }
+    </div>
+</section>
+
+<!-- Section other movies -->
+
+<section class="othermovies">
+    <h2 id="headerothermovies">Other movies that might interest you</h2>
+
+        <div class="container">
+        @foreach (var movie in @Model.SuggestedMovies)
+        {
+                 <div class="card">
+                <div class="icon">
+                    <a asp-action="Index" asp-controller="MoviePage" asp-route-id="@movie.imdbId"><img src="@movie.Poster" alt="Picture of @movie.Title" /></a>
+                </div>
+                <div class="content">
+                    <h3>@movie.Title</h3>
+                    <p>@movie.Plot</p>
+                </div>
+                <a class="more"></a>
+                <a class="view" asp-action="Index" asp-controller="MoviePage" asp-route-id="@movie.imdbId"></a>
+            </div>
+        
+        }
+    </div>
+ </section>
