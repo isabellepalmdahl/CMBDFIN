@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>CMDb_Grupp10_IWA</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Mock\cmdblotrmovie.json" />
+    <Content Remove="Mock\cmdbpopular4.json" />
+    <Content Remove="wwwroot\images\logo" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\images\logo" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Mock\cmdblotrmovie.json" />
+    <None Include="Mock\cmdbpopular4.json" />
+  </ItemGroup>
+
+</Project>
